@@ -74,15 +74,25 @@ For this lab we will simply add Debug print statements. However, the use of addi
 
 #### Build and test MyWizardDriver
 
-1. **Open** the Visual Studio Command Prompt
-2. **Type** build
-3. **Type** build run
+1.  At the Terminal Command Prompt (**Cntl-Alt-T**)
+```
+bash$ cd ~/src/edk2
+bash$ build
+```
+2. **Copy** the `OVMF.fd` BIOS image created from the `build` to the run-ovmf directory naming it `bios.bin` <br>
+   `bash$ cp ~/src/edk2/Build/OvmfX64/DEBUG_GCC5/FV/OVMF.fd bios.bin`  <br>
+
+3. **Invoke** Qemu <br>
+```
+ bash$ cd ~/run-ovmf
+ bash$ . RunQemu.sh 
+```
 4. At the UEFI Shell prompt,type **exit**<br>
 5. Now at the setup front page menu,** select** “Device Manager”
 6. Inside the Device Manager menu** press **the down arrow to “My Wizard Driver Sample Formset” **Press** "Enter"
-7.  **Observe **the Visual Studio Command Prompt – build run Window <BR>
-**Test:** changing the “Name of Configuration” and the “Enter ZY Base(Hex)” fields while observing the Visual Studio Command Prompt – build run Window
-8. **Switch back **to Visual Studio and notice the changes that you made.
+7.  **Observe **the QEMU Console Window or debug output <BR>
+**Test:** in the your drivers menu by changing the “Name of Configuration” and the “Enter ZY Base(Hex)” fields while observing the QEMU Console Window or debug output.
+8. **Observe **in the QEMU Console Window or debug output the changes that you made.
 ![](/media/image88.png)
 **Notice: ** when changing the “**Name of Configuration**” field
 ![](/media/image89.png)
@@ -91,12 +101,14 @@ For this lab we will simply add Debug print statements. However, the use of addi
 **Notice: **when Pressing “F10”
 9. **Press** “Escape” and another "Escape" to exit the “Device Manager”
 10. **Select** “Continue” and then **Press** "Enter”
-11. **Type** “reset” at the Shell prompt and then **Press** “Enter” to return to the Visual Studio Command Prompt <br>
-![](/media/image97.png)
+11. **Type** “reset” at the Shell prompt <br>
+![](/media/image97.png)<br>
+12.** Exit** QEMU
 
 ---
-For any build issues copy the solution files from C:\Fw\LabSolutions\LessonE.9
+For any build issues copy the solution files from  ~/FW/LabSolutions/LessonE.9
 
-NOTE: Del Directory C:\fw\edk2\Build\NT32IA32\DEBUG_VS2010x86\IA32\MyWizardDriver before the Build command to build the MyWizardDriver Clean.
+NOTE: Delete Directory ~/src/edk2/Build/OvmfX64/DEBUG_GCC5/X64/MyWizardDriver before the Build command to build the MyWizardDriver Clean
+ 
 
 ### End of Lab 9
