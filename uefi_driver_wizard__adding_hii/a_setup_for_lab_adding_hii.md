@@ -30,19 +30,40 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 ## Lab 1 a. Setup for Lab adding HII {#setup-for-lab-adding-hii}
 
-1. Complete [Lab Setup](../lab_setup/README.md) to configure for building with Visual Studio.
+**Complete** [Lab Setup](../lab_setup/README.md) to configure for building with OvmfPkg with QEMU.
 
-2. Start with LAB 6\. on Driver porting Lab solution and **create** a folder called **MyWizardDriver** in the C:\fw\edk2 workspace
-![](/media/image2.png)
-3. Now**, locate** and **open**: C:\FW\LabSampleCode\MyWizardDriver
 
-4. Copy the following Files to C:\FW\edk2\MyWizardDriver
-![](/media/image3.png)
-5. **Open Visual Studio Command Prompt**
-![](/media/image4.png)
-6. **Type** CD C:\fw\edk2
-![](/media/image5.png)
-7. **Type** Edksetup (This is only needed if starting out with a **new** Visual Studio Command Prompt Window )<br>
-![](/media/image6.png)
-![](/media/image7.png)
+**Skip** to Lab 1.b if The UEFI Driver Porting lab was completed.
 
+1). Start with LAB 6\. on Driver porting Lab solution and **create** a folder called **MyWizardDriver** in the ~/src/edk2 workspace<br>
+2). Now**, locate** and **open**: ~/SRC/LabSampleCode\MyWizardDriver<br>
+3). **Copy **the following Files to ~/SRC/edk2/MyWizardDriver <br>
+ - ComponentName.c               ComponentName.h                       
+ - DriverBinding.h
+ - HiiConfigAccess.c             HiiConfigAccess.h
+ - MyWizardDriver.c              MyWizardDriver.h
+ - MyWizardDriver.inf            MyWizardDriver.uni
+ - MyWizardDriver.vfr            MyWizardDriverNVDataStruc.h
+ - SimpleTextOutput.c            SimpleTextOutput.h
+ 
+4). **Update** src/edk2/OvmfPkg/OvmfPkgX64.dsc and add the MyWizardDriver.inf to `[Components]` section:<br>
+Hint: add to the last module in the `[Components] `section<br>
+
+```
+ MyWizardDriver/MyWizardDriver.inf{
+   <LibraryClasses>    DebugLib|MdePkg/Library/UefiDebugLibConOut/UefiDebugLibConOut.inf
+ }
+
+```
+5). **Save** and **close** the file
+
+6). Open Terminal Command Prompt<br>
+  `bash$ cd ~/src/edk2  `<br>
+
+
+
+
+
+
+
+  

@@ -1,5 +1,5 @@
 <!--- @file
- README.md file for file UEFI_Driver_HII_Win_Linux_Guide 
+ README.md file for file UEFI_Driver_HII_Linux_Guide 
 
 Copyright (c) 2018, Intel Corporation. All rights reserved.<BR>
 
@@ -42,7 +42,7 @@ UEFI and EDK II Base Training
 
 _Lab and Reference Guide_
 
-_Assumes Windows 10_
+_Assumes Ubuntu 16.04_
 
 {% if book.draft %}
 ** DRAFT FOR REVIEW **
