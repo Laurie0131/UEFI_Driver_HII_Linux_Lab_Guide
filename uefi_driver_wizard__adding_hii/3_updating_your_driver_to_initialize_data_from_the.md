@@ -187,7 +187,9 @@ bash$ build
 3. **Invoke** Qemu <br>
  `bash$ cd ~/run-ovmf`<br>
  `bash$ . RunQemu.sh `<br>
-4.  At the UEFI Shell prompt,**type** "`Exit`" 
+4.  At the UEFI Shell prompt,**type** "`Exit`" <br>
+![](/media/image46.png)
+
 5.  Now at the setup front page menu,** select **“Device Manager”
 ![](/media/image18.png)
 6. **Press** “Enter”  to enter **“Device Manager”**

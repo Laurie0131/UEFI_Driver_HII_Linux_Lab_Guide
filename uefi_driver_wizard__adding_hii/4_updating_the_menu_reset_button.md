@@ -74,9 +74,18 @@ The next set of labs will update .VFR, `MyWizardDriver.vfr`, and UNI `MyWizardDr
 
 #### Build and test MyWizardDriver
 
-1. **Open** the Visual Studio Command Prompt
-2. **Type** build
-3. **Type** build run
+1.  At the Terminal Command Prompt (**Cntl-Alt-T**)
+```
+bash$ cd ~/src/edk2
+bash$ build
+```
+2. **Copy**  MyWizardDriver.efi  to hda-contents<br>	  
+ `bash$ cd ~/run-ovmf/hda-contents`<br>
+ `bash$ cp ~/src/edk2/Build/OvmfX64/DEBUG_GCC5/X64/MyWizardDriver.efi .` <br>
+3. **Invoke** Qemu <br>
+ `bash$ cd ~/run-ovmf`<br>
+ `bash$ . RunQemu.sh `<br>
+
 4. At the UEFI Shell prompt,type **exit**<br>
 
 ![](/media/image46.png)
