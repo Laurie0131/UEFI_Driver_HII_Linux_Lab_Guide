@@ -73,6 +73,17 @@ TOOL_CHAIN_TAG        = GCC5
 13. The file OVMF.fd should be in the Build directory: `~/src/edk2/Build/OvmfX64/DEBUG_GCC5/FV/OVMF.fd`
 
 <br>
+#### Build errors
+For build errors the Build option for GCC5 may need to be updated:
+1. **Edit** ~/src/edk2/tools_def.txt
+2. **Find** `DEFINE GCC44_ALL_CC_FLAGS` remove the "`-Werror`" flag because it will treat warnings as errors.
+
+```
+DEFINE GCC44_ALL_CC_FLAGS            = -g -fshort-wchar -fno-builtin -fno-strict-aliasing -Wall -Wno-array-bounds -ffunction-sections -fdata-sections -include AutoGen.h -fno-common -DSTRING_ARRAY_NAME=$(BASE_NAME)Strings
+
+```
+
+
 <br>
 
 ### Invoke QEMU to run UEFI Shell {#invoke-qemu-to-run-uefi-shell}

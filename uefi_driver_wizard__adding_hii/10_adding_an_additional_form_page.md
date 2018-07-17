@@ -49,9 +49,9 @@ In addition, this lab will show how the “time” and “date” VFR terms are 
 
 ```
 #string STR_FORM2_TITLE                #language en "MyWizardDriver Second Setup Page"
-#string STR_DATE_PROMPT                #language en "Windows System Date"
+#string STR_DATE_PROMPT                #language en "System Date"
 #string STR_DATE_HELP                  #language en "This is the help for the Date (month/day/year). (Error checking will be done against month/day/year combinations that are not supported.)"
-#string STR_TIME_PROMPT                #language en "Windows System Time"
+#string STR_TIME_PROMPT                #language en "System Time"
 #string STR_TIME_HELP                  #language en "This is the help for the Time (hour/minute/second)."
 #string STR_ERROR_POPUP                #language en "You typed in the wrong value!"
  
