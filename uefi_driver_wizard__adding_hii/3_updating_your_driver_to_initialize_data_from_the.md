@@ -120,9 +120,17 @@ Note the “`}`” on line 361 is still matching the initial if statement.  Make
 
 #### Build and test MyWizardDriver
 
-1. **Open** the Visual Studio Command Prompt 
-2.  **Type** build 
-3. **Type** build run 
+1. At the Terminal Command Prompt (**Cntl-Alt-T**)
+```
+bash$ cd ~/src/edk2
+bash$ build
+```
+2. **Copy** MyWizardDriver.efi to hda-contents<br>
+`bash$ cd ~/run-ovmf/hda-contents`<br>
+`bash$ cp ~/src/edk2/Build/OvmfX64/DEBUG_GCC5/X64/MyWizardDriver.efi .` <br>
+3. **Invoke** Qemu <br>
+`bash$ cd ~/run-ovmf`<br>
+`bash$ . RunQemu.sh `<br>
 4.  **At the UEFI Shell prompt,type** fs0: 
 5.  **Type** Load MyWizardDriver.efi and then **Press** “Enter” 
 ![](/media/image17.png)
@@ -138,12 +146,13 @@ Note the “`}`” on line 361 is still matching the initial if statement.  Make
 10. **Press** “Escape” to Exit the “Device Manager” Page
 11. **Press** Up Arrow to “Continue” and then **Press** “Enter” 
 ![](/media/image24.png)
-12. **Type** "`Reset`" to return to the Visual Studio Command Prompt <br>
+12. **Type** "`Reset`"  <br>
 ![](/media/image97.png)
+13. **Exit** QEMU
 <br> 
 
-For any build issues copy the solution files from C:\Fw\LabSolutions\LessonE.3
-NOTE: Del Directory C:\fw\edk2\Build\NT32IA32\DEBUG_VS2010x86\IA32\MyWizardDriver before the Build command to build the MyWizardDriver Clean
+For any build issues copy the solution files from ~/FW/LbSolutions/LessonE.3
+NOTE: Del Directory ~/src/edk2/Build/OvmfX64/DEBUG_GCC5/X64/MyWizardDriver before the Build command to build the MyWizardDriver Clean
 
 <br><br><br>
 <br><br><br>
@@ -157,19 +166,27 @@ NOTE: Del Directory C:\fw\edk2\Build\NT32IA32\DEBUG_VS2010x86\IA32\MyWizardDrive
 
 As of now, your driver needs to be soft loaded each time from the shell prompt.  In this lab, you’ll update the platform .FDF file to force your driver to load as part of the platform UEFI driver.  
 
-1. **Open** to update:  C:\fw\edk2\Nt32PkgNt32Pkg.Fdf 
+1. **Open** to update:  ~/src/edk2/OvmfPkg/OvmfPkgX64.Fdf 
 2. **Add** the following code (as shown below before “`!if $(BUILD_NEW_SHELL) == TRUE`” ):<br>
  `INF MyWizardDriver/MyWizardDriver.inf`  <Br>
-3. **Save** Nt32pkg.fdf
+3. **Save** ~/src/edk2/OvmfPkg/OvmfPkgX64.Fdf 
 
 
 
 
 #### Build and test MyWizardDriver
 
-1. **Open** the Visual Studio Command Prompt 
-2.  **Type** build 
-3. **Type** build run 
+1.  At the Terminal Command Prompt (**Cntl-Alt-T**)
+```
+bash$ cd ~/src/edk2
+bash$ build
+```
+2. **Copy**  MyWizardDriver.efi  to hda-contents<br>	  
+ `bash$ cd ~/run-ovmf/hda-contents`<br>
+ `bash$ cp ~/src/edk2/Build/OvmfX64/DEBUG_GCC5/X64/MyWizardDriver.efi .` <br>
+3. **Invoke** Qemu <br>
+ `bash$ cd ~/run-ovmf`<br>
+ `bash$ . RunQemu.sh `<br>
 4.  At the UEFI Shell prompt,**type** "`Exit`" 
 5.  Now at the setup front page menu,** select **“Device Manager”
 ![](/media/image18.png)
@@ -180,8 +197,9 @@ As of now, your driver needs to be soft loaded each time from the shell prompt. 
 9. **Press **Up Arrow to “Continue”
 ![](/media/image24.png)
 10. **Press** “Enter” 
-11. **Type** "`Reset`" to return to the Visual Studio Command Prompt<br> 
+11. **Type** "`Reset`"<br> 
 ![](/media/image97.png)
+12. **Exit** QEMU
  
 
 ---
