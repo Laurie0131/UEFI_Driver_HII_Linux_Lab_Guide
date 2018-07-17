@@ -204,9 +204,9 @@ bash$ build
 
 ---
 
-For any build issues copy the solution files from C:\Fw\LabSolutions\LessonE.3
+For any build issues copy the solution files from ~/FW/LbSolutions/LessonE.3
 
-NOTE: Del Directory C:\fw\edk2\Build\NT32IA32\DEBUG_VS2010x86\IA32\MyWizardDriver before the Build command to build the MyWizardDriver Clean
+NOTE: Del Directory ~/src/edk2/Build/OvmfX64/DEBUG_GCC5/X64/MyWizardDriver before the Build command to build the MyWizardDriver Clean
 
 
 #### End of Lab 3
