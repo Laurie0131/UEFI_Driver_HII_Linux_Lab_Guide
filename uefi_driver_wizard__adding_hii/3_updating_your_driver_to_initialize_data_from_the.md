@@ -181,9 +181,8 @@ As of now, your driver needs to be soft loaded each time from the shell prompt. 
 bash$ cd ~/src/edk2
 bash$ build
 ```
-2. **Copy**  MyWizardDriver.efi  to hda-contents<br>	  
- `bash$ cd ~/run-ovmf/hda-contents`<br>
- `bash$ cp ~/src/edk2/Build/OvmfX64/DEBUG_GCC5/X64/MyWizardDriver.efi .` <br>
+3. **Copy** the **Note:**`OVMF.fd` BIOS image created from the `build` to the run-ovmf directory naming it `bios.bin` <br>
+   `bash$ cp ~/src/edk2/Build/OvmfX64/DEBUG_GCC5/FV/OVMF.fd bios.bin`  <br>
 3. **Invoke** Qemu <br>
  `bash$ cd ~/run-ovmf`<br>
  `bash$ . RunQemu.sh `<br>

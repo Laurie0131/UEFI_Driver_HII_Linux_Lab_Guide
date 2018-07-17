@@ -79,9 +79,9 @@ The next set of labs will update .VFR, `MyWizardDriver.vfr`, and UNI `MyWizardDr
 bash$ cd ~/src/edk2
 bash$ build
 ```
-2. **Copy**  MyWizardDriver.efi  to hda-contents<br>	  
- `bash$ cd ~/run-ovmf/hda-contents`<br>
- `bash$ cp ~/src/edk2/Build/OvmfX64/DEBUG_GCC5/X64/MyWizardDriver.efi .` <br>
+2. **Copy** the `OVMF.fd` BIOS image created from the `build` to the run-ovmf directory naming it `bios.bin` <br>
+   `bash$ cp ~/src/edk2/Build/OvmfX64/DEBUG_GCC5/FV/OVMF.fd bios.bin`  <br>
+
 3. **Invoke** Qemu <br>
  `bash$ cd ~/run-ovmf`<br>
  `bash$ . RunQemu.sh `<br>

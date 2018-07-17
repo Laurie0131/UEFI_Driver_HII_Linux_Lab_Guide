@@ -99,9 +99,18 @@ For this lab you will add code to give your driver menu a pop-up menu item by de
 
 #### Build and test MyWizardDriver
 
-1. **Open** the Visual Studio Command Prompt
-2. **Type** build
-3. **Type** build run
+1.  At the Terminal Command Prompt (**Cntl-Alt-T**)
+```
+bash$ cd ~/src/edk2
+bash$ build
+```
+2. **Copy** the `OVMF.fd` BIOS image created from the `build` to the run-ovmf directory naming it `bios.bin` <br>
+   `bash$ cp ~/src/edk2/Build/OvmfX64/DEBUG_GCC5/FV/OVMF.fd bios.bin`  <br>
+
+3. **Invoke** Qemu <br>
+ `bash$ cd ~/run-ovmf`<br>
+ `bash$ . RunQemu.sh `<br>
+
 4. At the UEFI Shell prompt,type **exit**<br>
 ![](/media/image46.png)
 5. Now at the setup front page menu,** select** “Device Manager”
