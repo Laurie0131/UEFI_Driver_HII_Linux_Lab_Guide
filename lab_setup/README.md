@@ -76,7 +76,7 @@ TOOL_CHAIN_TAG        = GCC5
 <br>
 
 ### Invoke QEMU to run UEFI Shell {#invoke-qemu-to-run-uefi-shell}
-
+ 
 
 1. **Create** a run-ovmf directory under the home directory
 ```
