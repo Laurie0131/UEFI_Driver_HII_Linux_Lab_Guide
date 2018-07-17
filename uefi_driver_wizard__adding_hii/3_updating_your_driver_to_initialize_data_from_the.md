@@ -91,7 +91,7 @@ MdeModulePkg/MdeModulePkg.dec
 `@~347`: remove: “`&PrivateData->`” from the “`&PrivateData->Configuration`”
 ![](/media/image43_1.JPG)<br>
 
-12). **Add** the following code to the MyWizardDriverDriverEntryPoint entry point code at approximately line 349 before<br>
+12). **Add** the following code to the `MyWizardDriverDriverEntryPoint` entry point code at approximately line 349 before<br>
  `// Install Driver Supported EFI Version Protocol onto ImageHandle`
 You’re deleting the “`}`" and replacing it with the following code (as shown below).  With this replacement we are adding an “`else`” to the “`if`” statement: <br>
 Note the “`}`” on line 361 is still matching the initial if statement.  Make sure you do not have a duplicate “`}`”
