@@ -33,19 +33,9 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 1.  Download the [UEFI Training Materials](https://github.com/Laurie0131/Lab_Material_FW) .zip (accept any security notifications) 
 2. **Click** “Open”  and Extract the file to HOME which will take a few minutes <br>
-Note:  It is highly important that you unzip the file correctly to this location because all the file locations in this training guide follow that format.
-```
-
-  Lab_Material_FW-master/FW/ Edk2 – Open source tianocore.org EDK II 
-  Lab_Material_FW-master/FW/ Edk2Linux – BaseTools for Linux
-  Lab_Material_FW-master/FW/ DriverWizard – Install python script
-  Lab_Material_FW-master/FW/ LabSampleCode  - Solutions for Labs
-  Lab_Material_FW-master/FW/ Documentation - .chm files and examples
-
-```
+Note:  It is highly important that you unzip the file correctly to this location because all the file locations in this training guide follow that format. The Default will be in` /FW/...` Directory
 
 3.  **Install** the Ubuntu Linux tools:
-
 ```
 bash$ sudo apt-get install build-essential uuid-dev iasl git 
 bash$ sudo apt-get install gcc-5 nasm 
@@ -77,7 +67,23 @@ bash$ sudo apt-get install qemu
 
 ### Invoke QEMU to run UEFI Shell {#invoke-qemu-to-run-uefi-shell}
 
-**_Note_**_: You’ll need to repeat this step each time you exit the Visual Studio Command Prompt window. It is recommended that you keep your command prompt open during the training Labs._
+
+1. **Create** a run-ovmf directory under the home directory
+```
+   bash$ cd ~
+   bash$ mkdir ~run-ovmf
+   bash$ cd run-ovmf
+```
+2. **Create** a directory to use as a hard disk image <br>
+   `bash$ mkdir hda-contents` <br>
+3. **Copy** the `OVMF.fd` BIOS image created from the `build` to the run-ovmf directory naming it `bios.bin` <br>
+   `bash$ cp ~/src/edk2/Build/OvmfX64/DEBUG_GCC5/FV/OVMF.fd bios.bin` <br>
+4. Create a Linux shell script to run the QEMU from the run-ovmf directory <br>
+   `bash$ gedit RunQemu.sh` <br>
+ Add the following:  <br>
+ `qemu-system-x86_64 -pflash bios.bin -hda fat:rw:hda-contents -net none -debugcon file:debug.log -global isa-debugcon.iobase=0x402`<Br>
+ 
+
 
 1. **Open** Visual Studio Command Prompt 
 2. **Type** `$ CD c:\fw\edk2` and then **Press** “Enter” 
