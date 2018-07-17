@@ -1,7 +1,7 @@
 {
   "variables" : {
     "draft"   : "yes",
-    "title"   : "UEFI Driver HII Win Lab Guide",
+    "title"   : "UEFI Driver HII Linux Lab Guide",
     "version" : "Revision 01.0"
   },
 
