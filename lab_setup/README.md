@@ -69,9 +69,7 @@ TOOL_CHAIN_TAG        = GCC5
 ```
 ![](/media/gedit_target.txt.JPG)
 11. **Save** and Exit target.txt
-12. To build OvmfPkg **Type** 
- `bash$ cd ~src/edk2`
- `bash$ build`
+12. To build OvmfPkg **Type**<br> `bash$ build`
 13. The file OVMF.fd should be in the Build directory: `~/src/edk2/Build/OvmfX64/DEBUG_GCC5/FV/OVMF.fd`
 
 <br>
