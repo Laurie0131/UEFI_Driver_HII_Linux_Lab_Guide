@@ -181,9 +181,19 @@ grayoutif  ideqval MWD_IfrNVData.MyWizardDriverChooseToEnable == 0x0;
 
 #### Build and test MyWizardDriver
 
-1. **Open** the Visual Studio Command Prompt
-2. **Type** build
-3. **Type** build run
+1.  At the Terminal Command Prompt (**Cntl-Alt-T**)
+```
+bash$ cd ~/src/edk2
+bash$ build
+```
+2. **Copy** the `OVMF.fd` BIOS image created from the `build` to the run-ovmf directory naming it `bios.bin` <br>
+   `bash$ cp ~/src/edk2/Build/OvmfX64/DEBUG_GCC5/FV/OVMF.fd bios.bin`  <br>
+
+3. **Invoke** Qemu <br>
+```
+ bash$ cd ~/run-ovmf
+ bash$ . RunQemu.sh 
+```
 4. At the UEFI Shell prompt,type **exit**<br>
 5. Now at the setup front page menu,** select** “Device Manager”
 6. Inside the Device Manager menu** press **the down arrow to “My Wizard Driver Sample Formset” **Press** "Enter" 
@@ -203,9 +213,10 @@ grayoutif  ideqval MWD_IfrNVData.MyWizardDriverChooseToEnable == 0x0;
 13. **Press **“F10” then “Escape” to save and exit
 14. **Press **“Escape” to exit “Device Manager”
 15. **Select** “Continue” and then **Press** "Enter”
-16. **Type** “reset” <br>
+16. **Type** “reset” at the Shell prompt 
+<br>
 ![](/media/image97.png) <br>
-at the Shell prompt and then **Press** “Enter” to return to the Visual Studio Command Prompt <br>
+17. **Exit** QEMU
 
 ---
  

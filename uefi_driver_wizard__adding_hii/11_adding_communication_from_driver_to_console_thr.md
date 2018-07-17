@@ -41,11 +41,11 @@ In this lab, you’ll add communication from the driver to the console through H
 ![](/media/image99.png)
 
 ### Add changes to your Driver
-1. **Update** the C:\Fw\edk2\Nt32pkg\Nt32pkg.fdf file 
-2. Make your driver stand alone again. **Remove** (or comment out) the include statement in the Nt32pkg.fdf file: <br>
+1. **Update** the ~/src/edk2/OvmfPkg/OvmfPkgX64.fdf file 
+2. Make your driver stand alone again. **Remove** (or comment out) the include statement in the OvmfPkgX64.fdf file: <br>
 ` #INF MyWizardDriver/MyWizardDriver.inf` <br>
 ![](/media/image100.png)
-3. **Save** Nt32pkg.fdf 
+3. **Save** OvmfPkgX64.fdf 
 4. **Update** the MyWizardDriver.uni file 
 5. Add the following code to the top of the file at approx. line 14 as shown: <br>
   `#langdef fr-FR  "Francais"`<br>
@@ -82,9 +82,19 @@ StringPtr        = HiiGetString (HiiHandle[0], STRING_TOKEN (STR_LANGUAGE_TEST_S
 
 
 ### Build and test Driver
-1. **Open** the Visual Studio Command Prompt 
-2.  **Type** build 
-3. **Type** build run 
+1.  At the Terminal Command Prompt (**Cntl-Alt-T**)
+```
+bash$ cd ~/src/edk2
+bash$ build
+```
+2. **Copy** the `OVMF.fd` BIOS image created from the `build` to the run-ovmf directory naming it `bios.bin` <br>
+   `bash$ cp ~/src/edk2/Build/OvmfX64/DEBUG_GCC5/FV/OVMF.fd bios.bin`  <br>
+
+3. **Invoke** Qemu <br>
+```
+ bash$ cd ~/run-ovmf
+ bash$ . RunQemu.sh 
+```
 4.  **At the UEFI Shell prompt,type** fs0: 
 5.  **Type** Load MyWizardDriver.efi  and then **Press** “Enter”
 ![](/media/image105.png) <br>
@@ -102,15 +112,16 @@ StringPtr        = HiiGetString (HiiHandle[0], STRING_TOKEN (STR_LANGUAGE_TEST_S
 12. At the Shell Prompt, **type** Fs0: 
 13. **Type** load MyWizardDriver.efi <br>
 ![](/media/image109.png)<br>
-14.  **Type** “reset” and then  **Press** “Enter” to return to the Visual Studio Command Prompt 
+14.  **Type** “reset” and then  **Press** “Enter” <br>
 ![](/media/image97.png)
-
+15. **Exit** QEMU
 ---
 
-For any build issues copy the solution files from C:\Fw\LabSolutions\LessonE.11
+For any build issues copy the solution files from ~/FW/LabSolutions/LessonE.11
+NOTE: Delete Directory 
 
-NOTE: Del Directory C:\fw\edk2\Build\NT32IA32\DEBUG_VS2010x86\IA32\MyWizardDriver before the Build command to build the MyWizardDriver Clean.
+~/src/edk2/Build/OvmfX64/DEBUG_GCC5/X64/MyWizardDriver before the Build command to build the MyWizardDriver Clean.
+Make sure you update OvmfPkgX64.fdf.
 
-Make sure you update Nt32Pkg.fdf.
 
 ### End Lab 11
