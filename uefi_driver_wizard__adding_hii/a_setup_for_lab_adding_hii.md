@@ -33,7 +33,7 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 **Complete** [Lab Setup](../lab_setup/README.md) to configure for building with OvmfPkg with QEMU.
 
 
-**Skip** to Lab 1.b if The UEFI Driver Porting lab was completed.
+**Skip** to Lab 1.b if the UEFI Driver Porting lab was completed.
 
 1). Start with LAB 6\. on Driver porting Lab solution and **create** a folder called **MyWizardDriver** in the ~/src/edk2 workspace<br>
 2). Now**, locate** and **open**: ~/SRC/LabSampleCode\MyWizardDriver<br>

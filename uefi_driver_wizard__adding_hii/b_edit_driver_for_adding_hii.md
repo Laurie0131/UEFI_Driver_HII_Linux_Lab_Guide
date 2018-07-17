@@ -31,24 +31,27 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 ## Lab 1 b. Edit Driver for adding HII {#b-edit-driver-for-adding-hii}
 
-1. **Open** C:\fw\edk2\MyWizardDriver 
-2. **Open** the following files for updating: 
+1). **Open** the following files for updating: 
   -  MyWizardDriverNVDataStruc.h
   - MyWizardDriver.vfr
   - MyWizardDriver.uni
   - MyWizardDriver.h
   - MyWizardDriver.c
   - MyWizardDriver.inf
-3.  **Update** the MyWizardDriverNVDataStruc.h file by copying and pasting the following GUID as shown below: This GUID is used to communicate to the HII Database and Browser Engine
+  
+2).  **Update** the MyWizardDriverNVDataStruc.h file by copying and pasting the following GUID as shown below: This GUID is used to communicate to the HII Database and Browser Engine
 ```c
   #define MYWIZARDDRIVER_FORMSET_GUID \
   { \
 0x5481db09, 0xe5f7, 0x4158, 0xa5, 0xc5, 0x2d, 0xbe, 0xa4, 0x95, 0x34, 0xff \
 }
 ```
-![](/media/image8.png)
-4. **Save** MyWizardDriverNVDataStruc.h 
-5. **Update** the **MyWizardDriver.vfr** file. **Delete** its contents and **replace** it with the following by copying and pasting: You’re adding a reference to the GUID and to the NVRAM storage where the configuration will be saved. In fact, you’re replacing most of the original .vfr.
+![](/media/image8.png)<br>
+3). **Save** MyWizardDriverNVDataStruc.h <br>
+
+4). **Update** the **MyWizardDriver.vfr** file. 
+5) **Delete** its contents and **replace** it with the following by copying and pasting: You’re adding a reference to the GUID and to the NVRAM storage where the configuration will be saved. In fact, you’re replacing most of the original .vfr.
+
 ```
 #include "MyWizardDriverNVDataStruc.h"
 formset
@@ -65,7 +68,7 @@ formset
     name  = MWD_IfrNVData,                  // Define referenced name in vfr
     guid  = MYWIZARDDRIVER_FORMSET_GUID;    // GUID of this buffer storage
 ```
-6.  Continue **adding** the remaining code to MyWizardDriver.vfr. This is a Enable/ Disable question for the setup menu in the form of a Check box.
+6).  Continue **adding** the remaining code to MyWizardDriver.vfr. This is a Enable/ Disable question for the setup menu in the form of a Check box.
 
 ```
 
@@ -95,7 +98,7 @@ endformset;
 ```
 7). **Save** MyWizardDriver.vfr <br>
 
-8). Now onto the MyWizardDriver.uni file. You’ll add new strings to support the forms. **Delete** the file’s content and **replace** it with the following by copying and pasting: 
+8). **Update ** MyWizardDriver.uni file. You’ll add new strings to support the forms. **Delete** the file’s content and **replace** it with the following by copying and pasting: 
 
 ```
 
@@ -116,7 +119,7 @@ endformset;
 
 
 9). **Save** MyWizardDriver.uni <br>
-10). Now update the MyWizardDriver.h file. **Add** the following HII libraries starting at approximately line 41 (as shown below) by copying and pasting: 
+10). **Update** the MyWizardDriver.h file. **Add** the following HII libraries starting at approximately line 41 (as shown below) by copying and pasting: 
 
 
 ```
@@ -172,8 +175,9 @@ typedef struct {
 
 ```
 ![](/media/image10.png)<br>
-12).  **Save** MyWizardDriver.h 
-13).  Now onto the MyWizardDriver.c file. <br> **Add** local definitions for the form GUID, variable name, and device path for HII at approximately line 13 after the `#include "MyWizardDriver.h"` by coping and pasting the following code. <br>In this step, you declare a local (to the module “`m`”) variable for the GUID we declared; the NVRAM variable name; driver handles; our configuration data; and the device path support.
+12).  **Save** MyWizardDriver.h <br>
+
+13). ** Update**  MyWizardDriver.c file. <br> **Add** local definitions for the form GUID, variable name, and device path for HII at approximately line 13 after the `#include "MyWizardDriver.h"` by coping and pasting the following code. <br>In this step, you declare a local (to the module “`m`”) variable for the GUID we declared; the NVRAM variable name; driver handles; our configuration data; and the device path support.
 
 ```
 // Begin code 
@@ -305,16 +309,25 @@ gEfiHiiDatabaseProtocolGuid                 ## CONSUMES
 ```
 ![](/media/image16.png)<br>
 20). **Save** the MyWizardDriver.inf file. All the files should be saved at this point. <br>
-21). **Add** MyWizardDriver.inf to the Nt32Pkg.dsc(See Lab 2building MyWizardDriver from the Driver Porting Lab) 
+21). **Add** MyWizardDriver.inf to the OvmfPkgX64.dsc(See Lab 2 building MyWizardDriver from the Driver Porting Lab) 
 
 #### Build and test MyWizardDriver
 
-1. **Re-Open** the Visual Studio Command Prompt 
-2.  **Type** build 
-3. **Type** build run 
-4.  **At the UEFI Shell prompt,type** fs0: 
-5.  **Type** Load MyWizardDriver.efi 
-6.  **Press** “Enter” This will load your driver into memory 
+
+1.  At the Terminal Command Prompt (**Cntl-Alt-T**)
+```
+bash$ cd ~/src/edk2
+bash$ build
+```
+2. **Copy**  MyWizardDriver.efi  to hda-contents<br>	  
+ `bash$ cd ~/run-ovmf/hda-contents`<br>
+ `bash$ cp ~/src/edk2/Build/OvmfX64/DEBUG_GCC5/X64/MyWizardDriver.efi .` <br>
+3. **Invoke** Qemu <br>
+ `bash$ cd ~/run-ovmf`<br>
+ `bash$ . RunQemu.sh `<br>
+4.  At the UEFI Shell prompt,**type** fs0: 
+5.  **Type** Load MyWizardDriver.efi and **Press** “Enter” <br>
+This will load your driver into memory 
 ![](/media/image17.png)
 7.  **Type** exit 
 8.  Now at the setup front page menu,** select **“Device Manager”
@@ -339,12 +352,11 @@ gEfiHiiDatabaseProtocolGuid                 ## CONSUMES
 ![](/media/image24.png)
 18. **At the Shell prompt** type **Reset**<br>
 ![](/media/image97.png)
-19. **Press** “Enter” to return to the Visual Studio Command Prompt 
-![](/media/image26.png)
+19.  **Exit** QEMU
 ---
 
 You’ve completed the first lab and added strings and forms to setup HII for user configuration. However, **the data is not saved to NVRAM**. In the next lab, you’ll learn how to update HII to save data to NVRAM.
 
-For any build issues copy the solution files from C:\Fw\LabSolutions\LessonE.1A
+For any build issues copy the solution files from ~/FW/LabSolutions/LessonE.1
 
-### end of Lab 1
+### End of Lab 1
