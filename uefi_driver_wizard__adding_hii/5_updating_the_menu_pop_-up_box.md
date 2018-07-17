@@ -134,10 +134,9 @@ bash$ build
 By updating MyWizardDriverNVDataStruc.h, our data structure stored in NVRAM is named `MWD_IfrNVData` of type `MYWIZARDDRIVER_CONFIGURATION`.<BR>
 **Notice** that the base address byte is the next to the last byte in the data structure `MWD_IfrNVData.MyWizardDriverBaseAddress` where `02 == 400H`, `01 == 480H`, and `00 == 500H` <br>
 Notice the NVRAM Variable with the value of `480H` will have a true value of `01`.
-16. **Type** “reset” at the Shell prompt
-17. **Press** “Enter” to return to the Visual Studio Command Prompt<br>
+16. **Type** “reset” at the Shell prompt <br>
 ![](/media/image97.png)
-
+17. **Exit** QEMU
 
 ---
 For any build issues copy the solution files from ~/Fw/LabSolutions/LessonE.5

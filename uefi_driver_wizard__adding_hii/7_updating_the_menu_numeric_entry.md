@@ -99,11 +99,12 @@ The string **“!!”** is part of the Browser engine : `MdeModulePkg\Universal\
 13. **Press** “F10”  to save, then “Escape” to exit
 14. **Press** “Escape” to exit the “Device Manager” 
 15. **Select “**Continue**”** and then **Press** "Enter”
-16. At the Shell Prompt, **type** dmpstore –all <br>
+16. At the Shell Prompt, **type** `dmpstore –all` <br>
 **Notice** by `modifyingMyWizardDriverNVDataStruc.h` our data structure stored in NVRAM is named `MWD_IfrNVData` of type `MYWIZARDDRIVER_CONFIGURATION`. 
 ![](/assets/image74_75.JPG)
-17 **Type “reset”** at the Shell prompt and then **Press** “Enter” to return to the Visual Studio Command Prompt <br>
+17. **Type “reset”** at the Shell prompt <br>
 ![](/media/image97.png)
+18. **Exit** QEMU
 
 ---
 

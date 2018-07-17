@@ -108,9 +108,9 @@ bash$ build
 **Notice** the unicode string “`12345678901234567890`” (or the 20 character value you typed) is now stored 
 because you entered those characters in the HII form menu.  This is because the file `WizardDriverNVDataStruc.h` has the data structure stored in NVRAM with the GUID define name `MWD_IfrNVData `of type `MYWIZARDDRIVER_CONFIGURATION`.  Notice that string data is the first 20 bytes in the data structure `MWD_IfrNVData.MyWizardDriverStringData`.
 ![](/assets/image65_66.JPG)
-20. **Type** “reset” and then “Enter" at the Shell prompt to return to the Visual Studio Command Prompt<br>
+20. **Type** “reset” and then “Enter" at the Shell prompt <br>
 ![](/media/image97.png)
-
+21. **Exit** QEMU
 ---
 
 For any build issues copy the solution files from ~/Fw/LabSolutions/LessonE.6
