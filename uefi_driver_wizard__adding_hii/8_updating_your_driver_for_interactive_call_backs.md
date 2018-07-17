@@ -72,20 +72,28 @@ switch (Action) { // Start switch and passed param Action
 
 #### Build and test MyWizardDriver
 
-1. **Open** the Visual Studio Command Prompt
-2. **Type** build
-3. **Type** build run
+1.  At the Terminal Command Prompt (**Cntl-Alt-T**)
+```
+bash$ cd ~/src/edk2
+bash$ build
+```
+2. **Copy** the `OVMF.fd` BIOS image created from the `build` to the run-ovmf directory naming it `bios.bin` <br>
+   `bash$ cp ~/src/edk2/Build/OvmfX64/DEBUG_GCC5/FV/OVMF.fd bios.bin`  <br>
+
+3. **Invoke** Qemu <br>
+```
+ bash$ cd ~/run-ovmf
+ bash$ . RunQemu.sh 
+```
 4. At the UEFI Shell prompt,type **exit**<br>
 5. Now at the setup front page menu,** select** “Device Manager”
 6. Inside the Device Manager menu** press **the down arrow to “My Wizard Driver Sample Formset” **Press** "Enter"
-7.  **Notice** the debug messages in the Visual Studio Command Prompt – build run Window (**No Debug messages for Call back**) 
-![](/media/image76.png)
-**. . .**
-![](/media/image77.png)
+7.  **Notice** that there are **No Debug messages for Call back** to the QEMU Console. 
 8. **Press** “Escape”  and another "Escape" to exit the “Device Manager” 
 9. **Select** “Continue” and then **Press** "Enter”
-10. **Type** “reset” at the Shell prompt and then **Press** “Enter” to return to the Visual Studio Command Prompt <br>
+10. **Type** “reset” at the Shell prompt <br>
 ![](/media/image25.png)
+11. **Exit** QEMU
 
 
 ### Lab 8_b._ Update the Menu for Interactive items {#b-update-the-menu-for-interactive-items}
@@ -103,15 +111,25 @@ switch (Action) { // Start switch and passed param Action
 
 #### Build and test MyWizardDriver
 
-1. **Open** the Visual Studio Command Prompt
-2. **Type** build
-3. **Type** build run
+1.  At the Terminal Command Prompt (**Cntl-Alt-T**)
+```
+bash$ cd ~/src/edk2
+bash$ build
+```
+2. **Copy** the `OVMF.fd` BIOS image created from the `build` to the run-ovmf directory naming it `bios.bin` <br>
+   `bash$ cp ~/src/edk2/Build/OvmfX64/DEBUG_GCC5/FV/OVMF.fd bios.bin`  <br>
+
+3. **Invoke** Qemu <br>
+```
+ bash$ cd ~/run-ovmf
+ bash$ . RunQemu.sh 
+```
 4. At the UEFI Shell prompt,type **exit**<br>
 5. Now at the setup front page menu,** select** “Device Manager”
 6. Inside the Device Manager menu** press **the down arrow to “My Wizard Driver Sample Formset” **Press** "Enter"
-7. Take a moment and ** review ** the Visual Studio build run command prompt window
+7. Take a moment and ** review ** the QEMU Console  window
 8. In the emulation window,** click **on “Name of Configuration” and “Enter ZY Base(Hex)”
-9. **Notice ** the following in the Visual Studio Command Prompt window: <br>
+9. **Notice ** the following in the QEMU Console  window: <br>
 Every time the browser does anything with the interactive labeled fields there is a call made to your driver’s call back function.  We can determine which item by the `quetionid` and what action by the Action passed to your call back function.  Your call back function can then add code to special case when these transitions occur.
 <br>
 **Entering Form**
@@ -122,14 +140,16 @@ Every time the browser does anything with the interactive labeled fields there i
 ![](/assets/image82-84.JPG)
 10. **Press** “Escape”  and another "Escape" to exit the “Device Manager” 
 11. **Select** “Continue” and then **Press** "Enter”
-12. **Type** “reset” at the Shell prompt and then **Press** “Enter” to return to the Visual Studio Command Prompt <br>
+12. **Type** “reset” at the Shell prompt <br>
 ![](/media/image97.png)
+13. **Exit** QEMU
 
 
 ---
 
-For any build issues copy the solution files from C:\Fw\LabSolutions\LessonE.8
+For any build issues copy the solution files from ~/FW/LabSolutions/LessonE.8
 
-NOTE: Del Directory C:\fw\edk2\Build\NT32IA32\DEBUG_VS2010x86\IA32\MyWizardDriver before the Build command to build the MyWizardDriver Clean.
+NOTE: Delete Directory ~/src/edk2/Build/OvmfX64/DEBUG_GCC5/X64/MyWizardDriver before the Build command to build the MyWizardDriver Clean
+
 
 ### End of Lab 8
