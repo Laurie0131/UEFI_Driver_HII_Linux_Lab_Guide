@@ -31,7 +31,7 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ## Lab 2\. Updating HII to Save Data Settings {#2-updating-hii-to-save-data-settings}
   
-In this lab, you’ll learn how to modify and update your driver’s HII code to save the users settings into NVRAM. The UEFI Driver Wizard created the protocols for your driver to update and interface with the HII browser engine and database. The HII configuration access Protocol functions for MyWizardDriver are in the file C:\fw\edk2\MyWizardDriver\HiiConfigAccess.c. This next lab will install these protocols and update them to save the user data from the HII menus into NVRAM.
+In this lab, you’ll learn how to modify and update your driver’s HII code to save the users settings into NVRAM. The UEFI Driver Wizard created the protocols for your driver to update and interface with the HII browser engine and database. The HII configuration access Protocol functions for MyWizardDriver are in the file ~src/edk2/MyWizardDriver/HiiConfigAccess.c. This next lab will install these protocols and update them to save the user data from the HII menus into NVRAM.
 
 1. **Update** the` MyWizardDriver.c `file <BR> Your driver will need to keep track of the consumed protocols in it’s own data structure so it will need to declare local pointers to these and then store them in its own private context data structure.
 2. **Add** the following local variable declarations in the function `MyWizardDriverDriverEntryPoint` Entry Point (as shown below Approx. line 185 ): 
@@ -96,7 +96,7 @@ Make sure not to comment out the second “` if (!EFI_ERROR (Status)) {`”<br>
 
 6). **Save** MyWizardDriver.c<br>
 
-7). **Open** C:\fw\edk2\MyWizardDriver\HiiConfigAccess.c. <br>  The Driver Wizard only made dummy functions for the extract, route and callback functions. In order to save the Data passed into the forms from the Hii Browser engine, you will need to port these functions to be functional.<br>
+7). **Open** ~src/edk2/MyWizardDriver/HiiConfigAccess.c. <br>  The Driver Wizard only made dummy functions for the extract, route and callback functions. In order to save the Data passed into the forms from the Hii Browser engine, you will need to port these functions to be functional.<br>
 
 8). **Add** the following extern statements for the form GUID and the NVRam variable (as shown below) these are global to the driver module only hence the beginning lower case “m” is the standard for a global for a module : 
 

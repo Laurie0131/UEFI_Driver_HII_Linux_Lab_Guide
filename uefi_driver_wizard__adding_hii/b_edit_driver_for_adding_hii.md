@@ -212,7 +212,7 @@ HII_VENDOR_DEVICE_PATH  mHiiVendorDevicePath = {
 };
 // end code
 ```
-14). **Locate** EFI_STATUS within the function `MyWizardDriverDriverEntryPoin`t in the `MyWizardDriver.c `file (approx. Line 184) and **add** HII local definitions by copying and pasting (as shown below): 
+14). **Locate** EFI_STATUS within the function `MyWizardDriverDriverEntryPoint` in the `MyWizardDriver.c `file (approx. Line 184) and **add** HII local definitions by copying and pasting (as shown below): 
 
 ```
  // HII Locals
