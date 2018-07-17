@@ -34,7 +34,6 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 1.  Download the [UEFI Training Materials](https://github.com/Laurie0131/Lab_Material_FW) .zip (accept any security notifications) 
 2. **Click** “Open”  and Extract the file to HOME which will take a few minutes <br>
 Note:  It is highly important that you unzip the file correctly to this location because all the file locations in this training guide follow that format.
-
 ```
 
   Lab_Material_FW-master/FW/ Edk2 – Open source tianocore.org EDK II 
@@ -44,7 +43,9 @@ Note:  It is highly important that you unzip the file correctly to this location
   Lab_Material_FW-master/FW/ Documentation - .chm files and examples
 
 ```
-3.  Install the Ubuntu Linux tools:
+
+3.  **Install** the Ubuntu Linux tools:
+
 ```
 bash$ sudo apt-get install build-essential uuid-dev iasl git 
 bash$ sudo apt-get install gcc-5 nasm 
@@ -52,21 +53,29 @@ bash$ sudo apt-get install qemu
 ```
 4. ** Create **a directory “src”<br>
    `bash$ mkdir ~src` <br>
-5. From the ~FW folder, copy and paste folder “~FW/edk2” to ~src
-6. **Rename** or **mv** the directory “~src/edk2/BaseTools” to something else <br>
+5. From the `~FW` folder, copy and paste folder “`~FW/edk2`” to `~src`
+6. **Rename** or **mv** the directory “`~src/edk2/BaseTools`” to something else <br>
   `bash$ cd ~src/edk2` <br>
   `bash$ mv BaseTools BaseToolsX`<br>
 7. **Extract** the file `~FW/edk2Linux/BaseTools.tar.gz`  to  `~src/edk2`<br>
-  `bash$ cd ~src/edk2`
-Make the BaseTools and setup the environment
-   bash$ make –C BaseTools
-   bash$ . edksetup.sh
-Edit the file Conf/target.txt
-   bash$ gedit Conf/target.txt
+  `bash$ cd ~src/edk2` <br>
+8. Make the BaseTools and setup the environment <br>
+   `bash$ make –C BaseTools` <br>
+   `bash$ . edksetup.sh` <br>
+9. **Edit **the file Conf/target.txt<br>
+   `bash$ gedit Conf/target.txt`
+![](/media/gedit_target.txt.JPG)
+10. **Save** and Exit target.txt
+11. To build OvmfPkg **Type** <br>
+ `bash$ build`
 
 
 
-### Preparing for the BUILD Command {#preparing-for-the-build-command}
+
+
+
+
+### Invoke QEMU to run UEFI Shell {#invoke-qemu-to-run-uefi-shell}
 
 **_Note_**_: You’ll need to repeat this step each time you exit the Visual Studio Command Prompt window. It is recommended that you keep your command prompt open during the training Labs._
 
