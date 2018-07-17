@@ -1,6 +1,6 @@
 # Summary
 
-* [UEFI\_Driver\_HII\_Win\_Lab\_Guide](README.md)
+* [UEFI\_Driver\_HII\_Linux\_Lab\_Guide](README.md)
 * [UEFI Driver Wizard – Adding HII Labs](uefi_driver_wizard__adding_hii/README.md)
   * [Lab 1. Adding Strings and Forms to Setup HII for User Configuration](uefi_driver_wizard__adding_hii/1_adding_strings_and_forms_to_setup_hii_for_user_c.md)
   * [a. Setup for Lab adding HII ](uefi_driver_wizard__adding_hii/a_setup_for_lab_adding_hii.md)
