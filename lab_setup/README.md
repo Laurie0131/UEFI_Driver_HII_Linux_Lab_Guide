@@ -34,6 +34,12 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 1.  Download the [UEFI Training Materials](https://github.com/Laurie0131/Lab_Material_FW) .zip (accept any security notifications) 
 2. **Click** “Open”  and Extract the file to HOME which will take a few minutes <br>
 Note:  It is highly important that you unzip the file correctly to this location because all the file locations in this training guide follow that format. The Default will be in` /FW/...` Directory
+  - `~/Lab_Material_FW/FW `
+    - Documentation 
+    - DriverWizard 
+    - edk2      
+    - edk2Linux 
+    - LabSampleCode
 
 3.  **Install** the Ubuntu Linux tools:
 ```
@@ -43,7 +49,7 @@ bash$ sudo apt-get install qemu
 ```
 4. ** Create **a directory “src”<br>
    `bash$ mkdir ~src` <br>
-5. From the `~FW` folder, copy and paste folder “`~FW/edk2`” to `~src`
+5. From the `~.../FW` folder, copy and paste folder “`~.../FW/edk2`” to `~src`
 6. **Rename** or **mv** the directory “`~src/edk2/BaseTools`” to something else <br>
   `bash$ cd ~src/edk2` <br>
   `bash$ mv BaseTools BaseToolsX`<br>
@@ -52,18 +58,24 @@ bash$ sudo apt-get install qemu
 8. Make the BaseTools and setup the environment <br>
    `bash$ make –C BaseTools` <br>
    `bash$ . edksetup.sh` <br>
-9. **Edit **the file Conf/target.txt<br>
+9. **Open **the file Conf/target.txt<br>
    `bash$ gedit Conf/target.txt`
+10. Update the following:
+
+```
+ACTIVE_PLATFORM       = OvmfPkg/OvmfPkgX64.dsc
+TARGET_ARCH           = X64
+TOOL_CHAIN_TAG        = GCC5
+```
 ![](/media/gedit_target.txt.JPG)
-10. **Save** and Exit target.txt
-11. To build OvmfPkg **Type** <br>
+11. **Save** and Exit target.txt
+12. To build OvmfPkg **Type** 
+ `bash$ cd ~src/edk2`
  `bash$ build`
+13. The file OVMF.fd should be in the Build directory: `~/src/edk2/Build/OvmfX64/DEBUG_GCC5/FV/OVMF.fd`
 
-
-
-
-
-
+<br>
+<br>
 
 ### Invoke QEMU to run UEFI Shell {#invoke-qemu-to-run-uefi-shell}
 
@@ -74,7 +86,7 @@ bash$ sudo apt-get install qemu
    bash$ mkdir ~run-ovmf
    bash$ cd run-ovmf
 ```
-2. **Create** a directory to use as a hard disk image <br>
+2. **Create** a directory hda-contents to use as a hard disk image <br>
    `bash$ mkdir hda-contents` <br>
 3. **Copy** the `OVMF.fd` BIOS image created from the `build` to the run-ovmf directory naming it `bios.bin` <br>
    `bash$ cp ~/src/edk2/Build/OvmfX64/DEBUG_GCC5/FV/OVMF.fd bios.bin` <br>
