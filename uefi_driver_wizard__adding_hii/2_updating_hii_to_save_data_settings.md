@@ -278,9 +278,17 @@ EFI_STATUS                       Status;
 
 #### Build and test MyWizardDriver
 
-1. **Open** the Visual Studio Command Prompt 
-2.  **Type** build 
-3. **Type** build run 
+1.  At the Terminal Command Prompt (**Cntl-Alt-T**)
+```
+bash$ cd ~/src/edk2
+bash$ build
+```
+2. **Copy**  MyWizardDriver.efi  to hda-contents<br>	  
+ `bash$ cd ~/run-ovmf/hda-contents`<br>
+ `bash$ cp ~/src/edk2/Build/OvmfX64/DEBUG_GCC5/X64/MyWizardDriver.efi .` <br>
+3. **Invoke** Qemu <br>
+ `bash$ cd ~/run-ovmf`<br>
+ `bash$ . RunQemu.sh `<br>
 4.  **At the UEFI Shell prompt,type** fs0: 
 5.  **Type** Load MyWizardDriver.efi 
 6.  **Press** “Enter” 
@@ -304,15 +312,16 @@ EFI_STATUS                       Status;
 17.  At the Shell Prompt type **`Shell> dmpstore -all`** <BR> **Notice** that enable is selected and saved in NVRam as the value of 0x00:
 ![](/media/image36-37.JPG)
 Because our data structure in` MyWizardDriverNVDataStruc.h` is stored in NVRAM with the variable name `MWD_IfrNVData` of type `MYWIZARDDRIVER_CONFIGURATION`, we can see the changes from our menu accessing through our HII forms.<br> Notice that the enable/disable byte is the last byte in data structure `MWD_IfrNVData.MyWizardDriverChooseToEnable` where `00 == disable` and `01 == enable`.
-18. **Type** Reset to return to the Visual Studio Command Prompt <br>
+18. **Type** Reset  <br>
 
 ![](/media/image97.png)
+19. **Exit** Qemu
 
 ---
 
-For any build issues copy the solution files from C:\Fw\LabSolutions\LessonE.2
+For any build issues copy the solution files from  ~/Fw/LabSolutions/LessonE.2
 
-NOTE: Del Directory C:\fw\edk2\Build\NT32IA32\DEBUG_VS2010x86\IA32\MyWizardDriver before the Build command to build the MyWizardDriver Clean
+NOTE: Del Directory ~/src/edk2/Build/OvmfX64/DEBUG_GCC5/X64/MyWizardDriver before the Build command to build the MyWizardDriver Clean
 
 
 ### End of Lab 2
