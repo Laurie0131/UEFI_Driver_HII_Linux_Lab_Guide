@@ -16,9 +16,7 @@
   * [Lab 10. Adding an Additional Form Page](uefi_driver_wizard__adding_hii/10_adding_an_additional_form_page.md)
   * [Lab 11. Adding Communication from Driver to Console through HII](uefi_driver_wizard__adding_hii/11_adding_communication_from_driver_to_console_thr.md)
 * [Lab Setup](lab_setup/README.md)
-* [Microsoft Windows 10 – Visual Studio command prompt](microsoft_windows_10__visual_studio_command_prompt.md)
 * [Reference](reference.md)
-* [Microsoft Windows and Visual Studio Matrix ](microsoft_windows_and_visual_studio_matrix/README.md)
 * [Glossary of UEFI Terms and Acronyms](microsoft_windows_and_visual_studio_matrix/glossary_of_uefi_terms_and_acronyms.md)
 * [Helpful Links](microsoft_windows_and_visual_studio_matrix/helpful_links.md)
 
