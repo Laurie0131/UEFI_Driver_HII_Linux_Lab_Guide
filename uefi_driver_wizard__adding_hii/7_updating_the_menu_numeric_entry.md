@@ -30,7 +30,7 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 ## Lab 7\. Updating the Menu: Numeric Entry {#7-updating-the-menu-numeric-entry}
 
-In this lab, you’ll learn how to add a numeric entry to your driver menu. This lab uses the VFR term “numeric” that prompts the user to enter a free-form numeric value. The VFR determines the minimum and maximum values with the terms “minimum” and “maximum”. Since there is also an enable/disable switch, the VFR uses the “suppressif” term to display or hide this field when disabled. Also this field displays as decimal (default) or hexadecimal with the “flags” switch.
+In this lab, you’ll learn how to add a numeric entry to your driver menu. This lab uses the VFR term “`numeric`” that prompts the user to enter a free-form numeric value. The VFR determines the minimum and maximum values with the terms “`minimum`” and “`maximum`”. Since there is also an enable/disable switch, the VFR uses the “`suppressif`” term to display or hide this field when disabled. Also this field displays as decimal (default) or hexadecimal with the “`flags`” switch.
 ![](/media/image68.png)
 ###### Figure 7 : Menu with Numeric item entry
 
@@ -107,8 +107,9 @@ The string **“!!”** is part of the Browser engine : `MdeModulePkg\Universal\
 
 ---
 
-For any build issues copy the solution files from C:\Fw\LabSolutions\LessonE.7
+For any build issues copy the solution files from ~/FW/LabSolutions/LessonE.7
 
-NOTE: Del Directory C:\fw\edk2\Build\NT32IA32\DEBUG_VS2010x86\IA32\MyWizardDriver before the Build command to build the MyWizardDriver Clean.
+NOTE: Delete Directory ~/src/edk2/Build/OvmfX64/DEBUG_GCC5/X64/MyWizardDriver before the Build command to build the MyWizardDriver Clean
+
 
 ### End of Lab 7
