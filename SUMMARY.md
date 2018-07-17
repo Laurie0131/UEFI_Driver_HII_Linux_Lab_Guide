@@ -17,6 +17,4 @@
   * [Lab 11. Adding Communication from Driver to Console through HII](uefi_driver_wizard__adding_hii/11_adding_communication_from_driver_to_console_thr.md)
 * [Lab Setup](lab_setup/README.md)
 * [Reference](reference.md)
-* [Glossary of UEFI Terms and Acronyms](microsoft_windows_and_visual_studio_matrix/glossary_of_uefi_terms_and_acronyms.md)
-* [Helpful Links](microsoft_windows_and_visual_studio_matrix/helpful_links.md)
 
