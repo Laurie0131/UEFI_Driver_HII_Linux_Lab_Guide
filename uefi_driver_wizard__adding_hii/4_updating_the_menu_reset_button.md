@@ -99,15 +99,16 @@ bash$ build
 11. **Notice** the “**Configuration changed**” message at the bottom of the menu 
 12. To Exit **Press** “Escape” then “Y” 
 13. To Exit the “Device Manager” Page: **Press** “Escape” 
-14. **Press** Up Arrow to “Continue” <br> **Observe:** Notice that since this change requires a reset, the Nt32 will exit out completely. 
+14. **Press** Up Arrow to “Continue” <br> **Observe:** Notice that since this change requires a reset, the shell will exit out completely. 
 ![](/media/image51.png)
-15. **Press** “Enter” to return to the Visual Studio Command Prompt <br>
-![](/media/image26.png)
-
+15. **Press** “Enter” to  reset <br>
+16.  **Exit** QEMU
 ---
 
-For any build issues copy the solution files from C:\Fw\LabSolutions\LessonE.4
+For any build issues copy the solution files from ~/FW/LabSolutions/LessonE.4
 
-NOTE: Del Directory C:\fw\edk2\Build\NT32IA32\DEBUG_VS2010x86\IA32\MyWizardDriver before the Build command to build the MyWizardDriver Clean.
+
+NOTE: Delete Directory ~/src/edk2/Build/OvmfX64/DEBUG_GCC5/X64/MyWizardDriver before the Build command to build the MyWizardDriver Clean 
+
 
 ### End of Lab 4
