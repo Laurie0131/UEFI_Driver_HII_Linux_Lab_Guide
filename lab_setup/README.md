@@ -81,38 +81,13 @@ bash$ sudo apt-get install qemu
 4. Create a Linux shell script to run the QEMU from the run-ovmf directory <br>
    `bash$ gedit RunQemu.sh` <br>
  Add the following:  <br>
- `qemu-system-x86_64 -pflash bios.bin -hda fat:rw:hda-contents -net none -debugcon file:debug.log -global isa-debugcon.iobase=0x402`<Br>
- 
 
+```
+qemu-system-x86_64 -pflash bios.bin -hda fat:rw:hda-contents -net none -debugcon file:debug.log -global isa-debugcon.iobase=0x402
+```
+![](/media/geditRunQemush.png)
+5. **Save** RunQemu.sh and exit
+6. **Run** the RunQemu.sh Linux Shell Script: <br>
+ `bash$ . RunQemu.sh`
 
-1. **Open** Visual Studio Command Prompt 
-2. **Type** `$ CD c:\fw\edk2` and then **Press** “Enter” 
-
-3. **Type** `$ Edksetup` and then Press “Enter” 
-
-Note: If you see “!!! WARNING !!!...”, don’t be alarmed.  The "No CYGWIN..." can be ignored at this time, **BUT** make sure "NASM" is found and the `NASM_PREFIX `is set to `C:\nasm\`
-
-
-### Configuring Build Tools {#configuring-build-tools}
-
-**_Note_**_: You only need to edit Target.txt and/or Tools_Def.txt once after the first_ **edksetup** _command after downloading the Training materials .zip file._
-
-1. **Open** Notepad or other text editor that supports UNICODE 
-2.  **Open** C:/fw/edk2/Conf/Target.txt 
-3. Use the 
-[Microsoft Windows and Visual Studio Matrix ](../microsoft_windows_and_visual_studio_matrix/README.md) and then update `TOOL_CHAIN_TAG` to match your version of Visual Studio
-4. **Modify** **TOOL_CHAIN_TAG** to match your version of Visual Studio.
-
-**Example:**<br>
-for Windows 10 64 bit OS and Visual Studio 2013 modify the following in Target.txt<br>
-From:<br>
-**TOOL_CHAIN_TAG = MYTOOLS**
-<br>
-to:<br>
-**TOOL_CHAIN_TAG = VS2013x86**
-<br>
-OPTIONAL: Update the `MAX_CONCURRENT_THREAD_NUMBER ` By the number of processors on your laptop + 1.  Example: most have Intel® Dual Core with Hyper threading which means `2 procs + 2 HT + 1 = 5`.
-![](/media/image114.png)
-5. **Save** and **close** the text file C:/fw/edk2/conf/target.txt
-
-### End of Lab Setup for Windows
+### End of Lab Setup for Linux
