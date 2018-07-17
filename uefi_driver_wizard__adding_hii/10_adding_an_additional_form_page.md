@@ -208,7 +208,7 @@ grayoutif  ideqval MWD_IfrNVData.MyWizardDriverChooseToEnable == 0x0;
 at the Shell prompt and then **Press** “Enter” to return to the Visual Studio Command Prompt <br>
 
 ---
-
+ 
 For any build issues copy the solution files from C:\Fw\LabSolutions\LessonE.10
 
 NOTE: Del Directory C:\fw\edk2\Build\NT32IA32\DEBUG_VS2010x86\IA32\MyWizardDriver before the Build command to build the MyWizardDriver Clean.
