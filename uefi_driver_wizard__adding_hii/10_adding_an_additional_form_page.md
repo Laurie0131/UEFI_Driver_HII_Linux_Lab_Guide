@@ -192,7 +192,7 @@ grayoutif  ideqval MWD_IfrNVData.MyWizardDriverChooseToEnable == 0x0;
 **Notice**  the “Enter Page 2” option.  Without `goto` in the `MyWizardDriver.vfr` file, you wouldn’t be able to access page two.  
 7. **Select** “Enter Page 2” and then **Press** “Enter” <br>
 **Notice** how the System Date and Time cannot be modified to any other date/time and is grayed out:
-![](/media/image95.png)
+![](/media/SystemDateMenu.JPG)
 8. **Test **by trying to enter the date 02/30/2013, then try a valid leap year date: 02/29/2012.
 9. **Press** “Down Arrow” to return to Page 1 
 10. **Test** the “`grayoutif”` by going to “Enable My XYZ Device”
