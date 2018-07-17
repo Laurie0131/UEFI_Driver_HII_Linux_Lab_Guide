@@ -35,7 +35,7 @@ In this lab, you’ll learn how to add a _pop-up box_ to your driver’s form me
 ###### Figure 5 My Wizard Driver with a pop-up box
 
 **Background Information **
-The VFR term “**oneof**” will declare a pop-up menu. The user then selects one field that will dictate the value stored in the NVRAM variable.  Looking at Figure 6 above, there are three values:
+The VFR term “**oneof**” will declare a pop-up menu. The user then selects one field that will dictate the value stored in the NVRAM variable.  Looking at Figure 5 above, there are three values:
 
 | Value | Display | String token |
 | --- | --- | --- |
@@ -134,14 +134,15 @@ bash$ build
 By updating MyWizardDriverNVDataStruc.h, our data structure stored in NVRAM is named `MWD_IfrNVData` of type `MYWIZARDDRIVER_CONFIGURATION`.<BR>
 **Notice** that the base address byte is the next to the last byte in the data structure `MWD_IfrNVData.MyWizardDriverBaseAddress` where `02 == 400H`, `01 == 480H`, and `00 == 500H` <br>
 Notice the NVRAM Variable with the value of `480H` will have a true value of `01`.
-16. **Type** “reset” **at the Shell prompt
+16. **Type** “reset” at the Shell prompt
 17. **Press** “Enter” to return to the Visual Studio Command Prompt<br>
 ![](/media/image97.png)
 
 
 ---
-For any build issues copy the solution files from C:\Fw\LabSolutions\LessonE.5
+For any build issues copy the solution files from ~/Fw/LabSolutions/LessonE.5
 
-NOTE: Del Directory C:\fw\edk2\Build\NT32IA32\DEBUG_VS2010x86\IA32\MyWizardDriver before the Build command to build the MyWizardDriver Clean.
+NOTE: Delete Directory ~/src/edk2/Build/OvmfX64/DEBUG_GCC5/X64/MyWizardDriver before the Build command to build the MyWizardDriver Clean
+
 
 #### End of Lab 5
