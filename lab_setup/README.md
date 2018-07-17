@@ -100,6 +100,8 @@ qemu-system-x86_64 -pflash bios.bin -hda fat:rw:hda-contents -net none -debugcon
 ![](/media/geditRunQemush.png)
 5. **Save** RunQemu.sh and exit
 6. **Run** the RunQemu.sh Linux Shell Script: <br>
- `bash$ . RunQemu.sh`
+ `bash$ . RunQemu.sh`<br>
+![](/media/QEMU_BootingOVMF.JPG)
+
 
 ### End of Lab Setup for Linux
