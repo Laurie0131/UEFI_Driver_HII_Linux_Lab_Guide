@@ -28,22 +28,41 @@ OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS DOCUMENTATION, EVEN IF
 ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
-# Lab Setup Windows {#lab-setup}
+# Lab Setup Linux for Ubuntu 16.04 {#lab-setup}
 
 
 1.  Download the [UEFI Training Materials](https://github.com/Laurie0131/Lab_Material_FW) .zip (accept any security notifications) 
-2. **Click** “Open”  and Unzip the file to C: which will take a few minutes <br>
+2. **Click** “Open”  and Extract the file to HOME which will take a few minutes <br>
 Note:  It is highly important that you unzip the file correctly to this location because all the file locations in this training guide follow that format.
 ```
-C:\Fw\Presentations  - separate zip file 
-C:\Fw \Edk2 – Open source tianocore.org EDK II 
-C:\Fw \DriverWizard – Install .MSI
-C:\Fw \LabSampleCode  - Solutions for Labs
-C:\Fw \Documentation - .chm files and examples
-C:\Fw\Nasm – For Assembly compiler
+Lab_Material_FW-master/FW/ Presentations  - separate zip file 
+Lab_Material_FW-master/FW/ Edk2 – Open source tianocore.org EDK II 
+Lab_Material_FW-master/FW/ DriverWizard – Install python script
+Lab_Material_FW-master/FW/ LabSampleCode  - Solutions for Labs
+Lab_Material_FW-master/FW/ Documentation - .chm files and examples
+Lab_Material_FW-master/FW/ Nasm – Assembly compiler for Windows
 ```
-3.  **Copy** the C:\fw\NASM directory to C: <br>
-![](/media/image110.png)
+3.  Install the Ubuntu Linux tools:
+```
+bash$ sudo apt-get install build-essential uuid-dev iasl git 
+bash$ sudo apt-get install gcc-5 nasm 
+bash$ sudo apt-get install qemu
+```
+4.** Create **a directory “src”
+   bash$ mkdir ~src
+From the ~FW folder, copy and paste folder “~FW/edk2” to ~src
+Rename or mv the directory “~src/edk2/BaseTools” to something else
+bash$ cd ~src/edk2
+bash$ mv BaseTools BaseToolsX
+Extract the file ~FW/edk2Linux/BaseTools.tar.gz  to  ~src/edk2
+bash$ cd ~src/edk2
+Make the BaseTools and setup the environment
+   bash$ make –C BaseTools
+   bash$ . edksetup.sh
+Edit the file Conf/target.txt
+   bash$ gedit Conf/target.txt
+
+
 
 
 ### Pin Visual Studio Command Prompt for Windows {#pin-visual-studio-command-prompt-for-windows}

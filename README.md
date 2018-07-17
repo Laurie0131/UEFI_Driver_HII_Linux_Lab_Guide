@@ -32,7 +32,7 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 <img src="media/TianocoreTitlePageLogo.jpg" width="300" />
 
 
-# UEFI Driver HII Win Lab Guide {#uefi-driver-hii-win-lab-guide}
+# UEFI Driver HII Linux Lab Guide {#uefi-driver-hii-win-lab-guide}
 <!---
 ### {{ book.title }}
 -->
