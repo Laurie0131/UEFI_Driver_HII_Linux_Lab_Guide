@@ -31,7 +31,7 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 # Lab Setup Linux for Ubuntu 16.04 {#lab-setup}
 
 
-1.  Download the [UEFI Training Materials](https://github.com/Laurie0131/Lab_Material_FW) .zip (accept any security notifications) 
+1.  Download the [UEFI Training Materials](https://github.com/tianocore-training/Lab_Material_FW) .zip (accept any security notifications) 
 2. **Click** “Open”  and Extract the file to HOME which will take a few minutes <br>
 Note:  It is highly important that you unzip the file correctly to this location because all the file locations in this training guide follow that format. The Default will be in` /FW/...` Directory
   - `~/Lab_Material_FW/FW `
